@@ -21,19 +21,12 @@ pipeline {
                  echo 'test app'
             }
             }
-            steps {
-                steps {
-                 echo 'test 2 app'
-            }
-            }
-        }
         stage("deploy") {
-            steps {
                 steps {
                  echo 'tDeploy app'
             }
-            }
         }
+        
     }   
 }
 
