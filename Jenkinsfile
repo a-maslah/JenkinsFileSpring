@@ -13,12 +13,14 @@ pipeline {
             steps {
                  echo 'build app'
                 echo "build app ${NEW_VERSION}"
+                sh 'mvn build'
             }
         }
         stage("test") {
              
              steps {
                  echo 'test app'
+                 sh 'mvn package'
             }
             }
         stage("deploy") {
