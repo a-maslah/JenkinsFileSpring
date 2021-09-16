@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+      maven 'MAVEN'
+    }
     environment {
          NEW_VERSION = '1.0.1'
     }
