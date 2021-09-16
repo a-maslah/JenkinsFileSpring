@@ -16,13 +16,16 @@ pipeline {
             steps {
                  echo 'build app'
                 echo "build app ${NEW_VERSION}"
-                
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/a-maslah/JenkinsFileSpring']]])
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
+        
         stage("test") {
              
              steps {
                  echo 'test app'
+                
                  
             }
             }
